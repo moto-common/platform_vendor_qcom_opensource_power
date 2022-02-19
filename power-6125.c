@@ -59,7 +59,7 @@ static int camera_hint_ref_count;
 static void process_video_encode_hint(void* metadata);
 static void process_video_encode_hfr_hint(void* metadata);
 
-int power_hint_override(struct power_module* module, power_hint_t hint, void* data) {
+int power_hint_override(power_hint_t hint, void* data) {
     switch (hint) {
         case POWER_HINT_VSYNC: {
             break;
