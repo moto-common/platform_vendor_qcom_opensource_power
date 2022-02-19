@@ -73,6 +73,8 @@ int power_hint_override(power_hint_t hint, void* data) {
             process_video_encode_hfr_hint(data);
             return HINT_HANDLED;
         }
+        default:
+            break;
     }
     return HINT_NONE;
 }
