@@ -58,6 +58,13 @@ static void process_interaction_hint(void* data) {
     interaction(duration, ARRAY_SIZE(resources), resources);
 }
 
+static void process_app_launch_hint(void* data) {
+    int resources[] = { SCHED_UP_MIGRATE, 0x28, SCHED_DOWN_MIGRATE, 0x32, MAX_FREQ_BIG_CORE_0, 0xFFF,
+                        MAX_FREQ_LITTLE_CORE_0, 0xFFF, MIN_FREQ_BIG_CORE_0, 1535, MIN_FREQ_LITTLE_CORE_0, 1478 };
+    int duration = 1200;
+    perform_hint(duration, ARRAY_SIZE(resources), resources);
+}
+
 int power_hint_override(power_hint_t hint, void* data) {
     switch (hint) {
         case POWER_HINT_VSYNC: {
@@ -71,6 +78,10 @@ int power_hint_override(power_hint_t hint, void* data) {
         }
         case POWER_HINT_INTERACTION: {
             process_interaction_hint(data);
+            return HINT_HANDLED;
+        }
+        case POWER_HINT_LAUNCH: {
+            process_app_launch_hint(data);
             return HINT_HANDLED;
         }
         default:
