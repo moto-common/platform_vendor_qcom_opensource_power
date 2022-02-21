@@ -114,6 +114,10 @@ ifeq ($(call is-board-platform-in-list,trinket), true)
 LOCAL_SRC_FILES += power-6125.c
 endif
 
+ifeq ($(call is-board-platform-in-list,holi), true)
+LOCAL_SRC_FILES += power-4350.c
+endif
+
 endif # End of board specific list
 
 ifneq ($(TARGET_POWERHAL_MODE_EXT),)
