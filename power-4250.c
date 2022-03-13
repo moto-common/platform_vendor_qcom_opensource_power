@@ -53,8 +53,8 @@
 #define MIN_VAL(X, Y) ((X > Y) ? (Y) : (X))
 
 static void process_interaction_hint(void* data) {
-    int resources[] = { MAX_FREQ_BIG_CORE_0, 0xFFF, MAX_FREQ_LITTLE_CORE_0, 0xFFF, MIN_FREQ_BIG_CORE_0, 1401, MIN_FREQ_LITTLE_CORE_0, 1305 };
-    int duration = 200;
+    int resources[] = { MAX_FREQ_BIG_CORE_0, 0xFFF, MAX_FREQ_LITTLE_CORE_0, 0xFFF, MIN_FREQ_BIG_CORE_0, 1401, MIN_FREQ_LITTLE_CORE_0, 1804 };
+    int duration = 250;
     interaction(duration, ARRAY_SIZE(resources), resources);
 }
 
